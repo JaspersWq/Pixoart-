@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixoart - PixelArt Dönüştürücü</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="LOGOpixel.png">
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎨 Pixoart BETA</h1>
+            <p>Gelişmiş algoritması ile fotoğraflarınızı PixelArt'a dönüştürün.</p>
+        </div>
+
+        <div class="main-content">
+            <div class="upload-section">
+                <div class="upload-area" onclick="document.getElementById('fileInput').click()">
+                    <div class="upload-icon">📁</div>
+                    <div class="upload-text">Görselinizi buraya bırakın veya tıklayarak seçin</div>
+                    <div class="upload-subtext">JPG, PNG, GIF, WebP desteklenir (maks. 20MB)</div>
+                </div>
+                <input type="file" id="fileInput" accept="image/*">
+            </div>
+
+            <div class="controls hidden" id="controls">
+                <div class="control-group">
+                    <h3>🎨 Otomatik Ayar Verin</h3>
+                    <div class="preset-buttons">
+                        <button class="preset-btn active" data-preset="classic">Klasik</button>
+                        <button class="preset-btn" data-preset="retro">Retro Oyun</button>
+                        <button class="preset-btn" data-preset="modern">Modern</button>
+                        <button class="preset-btn" data-preset="artistic">Sanatsal</button>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <h3>🔧 Piksel Yapılandırması</h3>
+                    <div class="slider-container">
+                        <label for="pixelSize">Piksel blok boyutu</label>
+                        <input type="range" id="pixelSize" class="slider" min="2" max="32" value="8">
+                        <div class="value-display" id="pixelSizeValue">8px</div>
+                    </div>
+                    <div class="slider-container">
+                        <label for="resolution">Çıktı çözünürlük ölçeği</label>
+                        <input type="range" id="resolution" class="slider" min="1" max="8" value="4">
+                        <div class="value-display" id="resolutionValue">4x</div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <h3>🌈 Renk İşleme</h3>
+                    <div class="slider-container">
+                        <label for="colorReduction">Renk paleti boyutu</label>
+                        <input type="range" id="colorReduction" class="slider" min="4" max="256" value="32">
+                        <div class="value-display" id="colorReductionValue">32 renk</div>
+                    </div>
+                    <div class="select-container">
+                        <label for="colorAlgorithm">Renk kuantizasyon yöntemi</label>
+                        <select id="colorAlgorithm" class="custom-select">
+                            <option value="kmeans">K-Means Kümeleme</option>
+                            <option value="octree">Octree Kuantizasyon</option>
+                            <option value="median">Median Cut</option>
+                            <option value="uniform">Uniform Kuantizasyon</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <h3>✨ Geliştirme Filtreleri</h3>
+                    <div class="slider-container">
+                        <label for="contrast">Kontrast arttırımı</label>
+                        <input type="range" id="contrast" class="slider" min="0" max="100" value="0">
+                        <div class="value-display" id="contrastValue">0%</div>
+                    </div>
+                    <div class="slider-container">
+                        <label for="saturation">Renk doygunluğu</label>
+                        <input type="range" id="saturation" class="slider" min="0" max="200" value="100">
+                        <div class="value-display" id="saturationValue">100%</div>
+                    </div>
+                    <div class="slider-container">
+                        <label for="sharpening">Kenar keskinliği</label>
+                        <input type="range" id="sharpening" class="slider" min="0" max="100" value="0">
+                        <div class="value-display" id="sharpeningValue">0%</div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <h3>🎯 Gelişmiş Seçenekler</h3>
+                    <div class="checkbox-container">
+                        <div class="custom-checkbox">
+                            <input type="checkbox" id="dithering">
+                            <div class="checkmark"></div>
+                        </div>
+                        <label for="dithering">Daha yumuşak geçişler için dithering etkinleştir</label>
+                    </div>
+                    <div class="checkbox-container">
+                        <div class="custom-checkbox">
+                            <input type="checkbox" id="edgeEnhancement">
+                            <div class="checkmark"></div>
+                        </div>
+                        <label for="edgeEnhancement">Kenarları ve çizgileri belirginleştir</label>
+                    </div>
+                    <div class="checkbox-container">
+                        <div class="custom-checkbox">
+                            <input type="checkbox" id="antiAliasing" checked>
+                            <div class="checkmark"></div>
+                        </div>
+                        <label for="antiAliasing">Pürüzsüz eğriler için kenar yumuşatma</label>
+                    </div>
+                    <div class="select-container">
+                        <label for="outputFormat">Çıktı formatı</label>
+                        <select id="outputFormat" class="custom-select">
+                            <option value="png">PNG (En İyi Kalite)</option>
+                            <option value="jpg">JPEG (Daha Küçük Boyut)</option>
+                            <option value="webp">WebP (Modern)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <h3>⚡ PixelArt'a Çevir</h3>
+                    <button id="processBtn" class="process-btn"> OLUŞTUR
+                    </button>
+                </div>
+            </div>
+
+            <div class="results hidden" id="results">
+                <div class="image-container">
+                    <h3>📷 Orijinal Görsel</h3>
+                    <div class="image-wrapper">
+                        <img id="originalImage" class="preview-image" alt="Orijinal">
+                    </div>
+                </div>
+
+                <div class="image-container">
+                    <h3>🎨 PixelArt</h3>
+                    <div class="image-wrapper">
+                        <canvas id="pixelCanvas" class="preview-image"></canvas>
+                    </div>
+                    <button id="downloadBtn" class="download-btn">
+                        ⬇️ İNDİR
+                    </button>
+                </div>
+            </div>
+        </div><br>
+
+        <div class="footer">
+            <p>© 2025 Developed by JaspersArt - Pixoart Tüm Hakları Saklıdır.</p><br>
+            <a id="discord" href="https://discord.gg/8btjygjWB8" target="_blank"><i class="fab fa-discord"></i></a>
+            <a id="github" href="https://github.com/JaspersWq" target="_blank"><i class="fab fa-github"></i></a>
+            <a id="linkedin" href="https://www.linkedin.com/in/enes-ekici-0449ba255/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+
+    <div class="processing-overlay" id="processingOverlay">
+        <div class="processing-content">
+            <div class="spinner"></div>
+            <h3>Piksel Art oluşturuluyor...</h3>
+            <p>Daha iyi sonuçlar için bu işlem biraz uzun sürebilir. Lütfen bekleyin.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
