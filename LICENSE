@@ -1,67 +1,21 @@
-Apache License  
-Version 2.0, January 2004  
-https://www.apache.org/licenses/LICENSE-2.0 
+MIT License
 
-Copyright 2025 JaspersWq(Enes Ekici)
+Copyright (c) 2025 Enes Ekici
 
-----------------------------  
-TERMS AND CONDITIONS  
-----------------------------
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-1. DEFINITIONS
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-- **License**: This agreement covering usage, reproduction, and distribution.
-- **Licensor**: The copyright holder or authorized entity.
-- **You (or Your)**: The individual or entity exercising rights under this License.
-- **Source Form**: The preferred form for making modifications (e.g., source code).
-- **Object Form**: A compiled or translated form (e.g., binaries).
-- **Work**: The licensed project/content.
-- **Derivative Works**: Modifications or adaptations of the original Work.
-- **Contribution**: Any code or content submitted to the Work.
-- **Contributor**: Any person or organization that submits a Contribution.
-
-2. COPYRIGHT LICENSE
-
-Each Contributor grants You a **royalty-free, perpetual, worldwide license** to use, reproduce, prepare Derivative Works of, and distribute the Work in Source or Object form.
-
-3. PATENT LICENSE
-
-You are granted a **patent license** for using Contributions, unless you initiate patent litigation against any entity regarding the Work. In that case, the patent license is revoked.
-
-4. REDISTRIBUTION CONDITIONS
-
-You may distribute the Work or Derivative Works under these conditions:
-- Include a copy of this License.
-- Clearly mark modified files.
-- Retain relevant notices.
-- If the Work includes a NOTICE file, include it in your distribution.
-- You may add your own attribution notices, as long as they don’t misrepresent this License.
-
-5. SUBMISSIONS
-
-All Contributions submitted by You shall be under the terms of this License, unless otherwise stated in writing.
-
-6. TRADEMARKS
-
-This License does **not** grant permission to use any trademarks or names of the Licensor.
-
-7. DISCLAIMER OF WARRANTY
-
-The Work is provided **"AS IS"**, without warranty of any kind. You use it **at your own risk**.
-
-8. LIMITATION OF LIABILITY
-
-Contributors are **not liable** for any damages arising from use of the Work.
-
-9. ACCEPTING WARRANTY OR LIABILITY
-
-If you provide warranty, support, or indemnity, you do so **at your own risk and responsibility**, not on behalf of any Contributor.
-
-----------------------------  
-END OF TERMS AND CONDITIONS  
-----------------------------
-
-APPENDIX: APPLYING THE LICENSE
-
-To use this License in your project, include the following at the top of each file:
-
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
